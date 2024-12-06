@@ -1982,7 +1982,8 @@ export let Aladin = (function () {
         "cooFrameChanged",
         "resizeChanged",
         "projectionChanged",
-        "layerChanged"
+        "layerChanged",
+        "redrawFinished"
     ];
 
     /**

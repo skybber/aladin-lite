@@ -1310,6 +1310,11 @@ export let View = (function () {
 
         //this.then = now % View.FPS_INTERVAL;
         requestAnimFrame(this.redrawClbk);
+
+        if (this.aladin.callbacksByEventName) {
+            var redrawFinishedFunction = this.aladin.callbacksByEventName['redrawFinished'];
+            (typeof redrawFinishedFunction === 'function') && redrawFinishedFunction();
+        }
     };
 
     View.prototype.drawAllOverlays = function () {
